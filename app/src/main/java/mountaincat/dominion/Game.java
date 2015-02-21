@@ -28,7 +28,6 @@ public class Game {
         int amount = 10;
         while (amount > 0) {
             int randNum = rand.nextInt(totalType);
-
         }
 
         for (Type cardType : cardTypes) {
