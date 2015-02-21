@@ -3,7 +3,7 @@ package mountaincat.dominion.card;
 /**
  * Created by samslee on 2/20/15.
  */
-public class Duchy implements Card, Victory {
+public class Duchy extends Card implements Victory {
     @Override
     public Type getType() {
         return Type.DUCHY;

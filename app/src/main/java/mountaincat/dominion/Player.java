@@ -11,6 +11,7 @@ public class Player {
     private final List<Card> deck = new ArrayList<Card>();
     private final List<Card> hand = new ArrayList<Card>();
 
+    public final static Player NOPLAYER = new Player();
 
     public List<Card> getDeck() {
         return deck;
@@ -22,10 +23,6 @@ public class Player {
 
     public void addDiscardPileToDeck(List<Card> discardPile) {
         deck.addAll(discardPile);
-    }
-
-    public void shuffleDeck() {
-        //do shuffle
     }
 
     public void drawNewHand() {

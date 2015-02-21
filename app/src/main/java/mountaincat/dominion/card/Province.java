@@ -3,7 +3,7 @@ package mountaincat.dominion.card;
 /**
  * Created by samslee on 2/20/15.
  */
-public class Province implements Card, Victory {
+public class Province extends Card implements Victory {
     @Override
     public Type getType() {
         return Type.PROVINCE;

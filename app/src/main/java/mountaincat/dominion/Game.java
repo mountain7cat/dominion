@@ -1,41 +1,69 @@
 package mountaincat.dominion;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
 
+import mountaincat.dominion.Exception.KingdomPileEmptyException;
 import mountaincat.dominion.card.Card;
 import mountaincat.dominion.card.Type;
 /**
  * Created by samslee on 2/14/15.
  */
 public class Game {
-    private List<Type> cardTypes;
-    private List<Card> cards;
-    private List<Player> players;
+    private final List<Player> players = new ArrayList<Player>();
+    private Map<Type, Integer> kingdom = new HashMap<Type, Integer>();
 
-    public void setup() {
-        selectCards();
-        setNumberOfPlayers();
+    public Game(List<Player> players) {
+        players.addAll(players);
     }
 
-    private void setNumberOfPlayers() {
-
-    }
-
-    private void selectCards() {
-        Random rand = new Random();
-        int totalType = Type.values().length;
-        int amount = 10;
-        while (amount > 0) {
-            int randNum = rand.nextInt(totalType);
-        }
-
-        for (Type cardType : cardTypes) {
-
-        }
-    }
 
     public void start() {
 
+    }
+
+    public void setup() {
+        selectCards();
+    }
+
+    private List<Type> getAvailableTypes() {
+        return Arrays.asList(Type.values());
+    }
+
+    private int getKingdomSize() {
+        return 10;
+    }
+
+    private void selectCards() {
+        List<Type> types = shuffle(getAvailableTypes());
+        int c = 0;
+        while (c++ < getKingdomSize()) {
+            kingdom.put(types.get(c), 10);
+        }
+    }
+
+    public Card getFromKingdom(Type type) throws KingdomPileEmptyException {
+        int amount = kingdom.get(type);
+        if (amount == 0) {
+            throw new KingdomPileEmptyException(type);
+        }
+        kingdom.put(type, amount - 1);
+        return Card.getNew(type);
+    }
+
+    public static <T> List<T> shuffle(List<T> deck) {
+        Random rand = new Random();
+        for (int i = deck.size() - 1; i > 0; i--) {
+            int j = rand.nextInt(i);
+            T c = deck.remove(i);
+            deck.add(i, deck.get(j));
+            deck.remove(j);
+            deck.add(j, c);
+        }
+        return deck;
     }
 }

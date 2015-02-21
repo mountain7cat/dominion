@@ -3,7 +3,7 @@ package mountaincat.dominion.card;
 /**
  * Created by samslee on 2/14/15.
  */
-public class Copper implements Card, Treasure {
+public class Copper extends Card implements Treasure {
     @Override
     public Type getType() {
         return Type.COPPER;

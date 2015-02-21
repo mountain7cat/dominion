@@ -3,7 +3,7 @@ package mountaincat.dominion.card;
 /**
  * Created by samslee on 2/20/15.
  */
-public class Curse implements Card {
+public class Curse extends Card {
     @Override
     public Type getType() {
         return Type.CURSE;
