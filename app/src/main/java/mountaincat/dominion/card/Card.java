@@ -1,6 +1,6 @@
 package mountaincat.dominion.card;
 
-import mountaincat.dominion.Player;
+import mountaincat.dominion.players.Player;
 /**
  * interface for a dominion card
  */

@@ -1,4 +1,4 @@
-package mountaincat.dominion;
+package mountaincat.dominion.players;
 
 import java.util.ArrayList;
 import java.util.List;
