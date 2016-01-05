@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/yellow"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/cardName"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/zero_spacing"
+        android:layout_margin="@dimen/eight_spacing"
+        android:layout_weight="1"
+        android:background="@drawable/black_border"
+        android:gravity="center"
+        android:padding="@dimen/eight_spacing"
+        android:text="Gold" />
+
+    <TextView
+        android:id="@+id/miscellaneous"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/zero_spacing"
+        android:layout_margin="@dimen/eight_spacing"
+        android:layout_weight="4"
+        android:background="@drawable/black_border"
+        android:gravity="center"
+        android:padding="@dimen/eight_spacing"
+        android:text="x2" />
+
+</LinearLayout>
