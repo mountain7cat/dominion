@@ -4,38 +4,48 @@ package mountaincat.dominion.card;
  * Created by samslee on 2/20/15.
  */
 public class Province extends Card implements Victory {
-    @Override
-    public Type getType() {
-        return Type.PROVINCE;
-    }
 
-    @Override
-    public void onGain() {
+	private static Province mInstance = new Province();
 
-    }
+	private Province() {
+	}
 
-    @Override
-    public void onBuy() {
+	public static Province getInstance() {
+		return mInstance;
+	}
 
-    }
+	@Override
+	public Type getType() {
+		return Type.PROVINCE;
+	}
 
-    @Override
-    public void onPlay() {
+	@Override
+	public void onGain() {
 
-    }
+	}
 
-    @Override
-    public void onDiscard() {
+	@Override
+	public void onBuy() {
 
-    }
+	}
 
-    @Override
-    public void onTrash() {
+	@Override
+	public void onPlay() {
 
-    }
+	}
 
-    @Override
-    public int getVictoryPoint() {
-        return 6;
-    }
+	@Override
+	public void onDiscard() {
+
+	}
+
+	@Override
+	public void onTrash() {
+
+	}
+
+	@Override
+	public int getVictoryPoint() {
+		return 6;
+	}
 }

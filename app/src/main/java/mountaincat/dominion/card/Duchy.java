@@ -4,38 +4,48 @@ package mountaincat.dominion.card;
  * Created by samslee on 2/20/15.
  */
 public class Duchy extends Card implements Victory {
-    @Override
-    public Type getType() {
-        return Type.DUCHY;
-    }
 
-    @Override
-    public void onGain() {
+	private static Duchy mInstance = new Duchy();
 
-    }
+	private Duchy() {
+	}
 
-    @Override
-    public void onBuy() {
+	public static Duchy getInstance() {
+		return new Duchy();
+	}
 
-    }
+	@Override
+	public Type getType() {
+		return Type.DUCHY;
+	}
 
-    @Override
-    public void onPlay() {
+	@Override
+	public void onGain() {
 
-    }
+	}
 
-    @Override
-    public void onDiscard() {
+	@Override
+	public void onBuy() {
 
-    }
+	}
 
-    @Override
-    public void onTrash() {
+	@Override
+	public void onPlay() {
 
-    }
+	}
 
-    @Override
-    public int getVictoryPoint() {
-        return 3;
-    }
+	@Override
+	public void onDiscard() {
+
+	}
+
+	@Override
+	public void onTrash() {
+
+	}
+
+	@Override
+	public int getVictoryPoint() {
+		return 3;
+	}
 }

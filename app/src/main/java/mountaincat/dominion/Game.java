@@ -33,6 +33,7 @@ public class Game {
 	}
 
 	private List<Type> getAvailableTypes() {
+		// TODO: 1/4/16 choose only kingdom cards
 		return Arrays.asList( Type.values() );
 	}
 
@@ -54,7 +55,7 @@ public class Game {
 			throw new KingdomPileEmptyException( type );
 		}
 		kingdom.put( type, amount - 1 );
-		return Card.getNew( type );
+		return type.getCard();
 	}
 
 	public static <T> List<T> shuffle( List<T> deck ) {

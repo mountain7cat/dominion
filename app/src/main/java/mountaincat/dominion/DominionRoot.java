@@ -20,6 +20,7 @@ public class DominionRoot extends FragmentActivity {
 	protected void onCreate( Bundle savedInstanceState ) {
 		super.onCreate( savedInstanceState );
 		setContentView( R.layout.dominion_root );
+		// TODO: 1/4/16 add a start game dialog box
 		List<Player> players = new ArrayList<>();
 		players.add( new Player() );
 		players.add( new BigMoneyPlayer() );

@@ -11,7 +11,7 @@ public class Player {
     private final List<Card> deck = new ArrayList<Card>();
     private final List<Card> hand = new ArrayList<Card>();
 
-    public final static Player NOPLAYER = new Player();
+    public final static Player NOBODY = new Player();
 
     public List<Card> getDeck() {
         return deck;

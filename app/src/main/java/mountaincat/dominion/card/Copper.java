@@ -4,37 +4,47 @@ package mountaincat.dominion.card;
  * Created by samslee on 2/14/15.
  */
 public class Copper extends Card implements Treasure {
-    @Override
-    public Type getType() {
-        return Type.COPPER;
-    }
 
-    @Override
-    public void onGain() {
+	private static Copper mInstance = new Copper();
 
-    }
+	private Copper() {
+	}
 
-    @Override
-    public void onBuy() {
-        onGain();
-    }
+	public static Copper getInstance() {
+		return mInstance;
+	}
 
-    @Override
-    public void onPlay() {
-    }
+	@Override
+	public Type getType() {
+		return Type.COPPER;
+	}
 
-    @Override
-    public void onDiscard() {
+	@Override
+	public void onGain() {
 
-    }
+	}
 
-    @Override
-    public void onTrash() {
+	@Override
+	public void onBuy() {
+		onGain();
+	}
 
-    }
+	@Override
+	public void onPlay() {
+	}
 
-    @Override
-    public int getValue() {
-        return 1;
-    }
+	@Override
+	public void onDiscard() {
+
+	}
+
+	@Override
+	public void onTrash() {
+
+	}
+
+	@Override
+	public int getValue() {
+		return 1;
+	}
 }
