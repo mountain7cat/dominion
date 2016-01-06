@@ -6,20 +6,36 @@ import java.util.List;
 import mountaincat.dominion.players.BigMoneyPlayer;
 import mountaincat.dominion.players.Player;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.app.FragmentActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 
 public class DominionRoot extends FragmentActivity {
 
 	private Game mGame;
+	View mCardView;
 
 	@Override
 	protected void onCreate( Bundle savedInstanceState ) {
 		super.onCreate( savedInstanceState );
-		setContentView( R.layout.dominion_root );
+		setContentView( R.layout.sample );
+		mCardView = findViewById( R.id.card );
+		mCardView.setOnClickListener( new View.OnClickListener() {
+			@Override
+			public void onClick( View v ) {
+				Intent intent = new Intent( DominionRoot.this, SecondActivity.class );
+				ActivityOptionsCompat options =
+						ActivityOptionsCompat.makeSceneTransitionAnimation( DominionRoot.this, mCardView, "card" );
+				startActivity( intent, options.toBundle() );
+			}
+		} );
+
+
 		// TODO: 1/4/16 add a start game dialog box
 		List<Player> players = new ArrayList<>();
 		players.add( new Player() );
