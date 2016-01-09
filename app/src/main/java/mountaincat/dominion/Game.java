@@ -25,7 +25,7 @@ public class Game {
 	}
 
 
-	public static Game startGame() {
+	public static Game newGame() {
 		List<Player> players = new ArrayList<>();
 		players.add( new Player() );
 		players.add( new BigMoneyPlayer() );

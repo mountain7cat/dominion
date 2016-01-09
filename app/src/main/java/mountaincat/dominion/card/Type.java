@@ -1,5 +1,13 @@
 package mountaincat.dominion.card;
 
+import mountaincat.dominion.card.base.Copper;
+import mountaincat.dominion.card.base.Curse;
+import mountaincat.dominion.card.base.Duchy;
+import mountaincat.dominion.card.base.Estate;
+import mountaincat.dominion.card.base.Gold;
+import mountaincat.dominion.card.base.Province;
+import mountaincat.dominion.card.base.Silver;
+
 /**
  * Created by samslee on 2/14/15.
  */

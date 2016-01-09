@@ -1,22 +1,25 @@
-package mountaincat.dominion.card;
+package mountaincat.dominion.card.base;
+
+import mountaincat.dominion.card.Card;
+import mountaincat.dominion.card.Type;
 
 /**
  * Created by samslee on 2/20/15.
  */
-public class Silver extends Card implements Treasure {
+public class Curse extends Card {
 
-	private static final Silver mInstance = new Silver();
+	private static Curse mInstance = new Curse();
 
-	private Silver() {
+	private Curse() {
 	}
 
-	public static Silver getInstance() {
+	public static Curse getInstance() {
 		return mInstance;
 	}
 
 	@Override
 	public Type getType() {
-		return Type.SILVER;
+		return Type.CURSE;
 	}
 
 	@Override
@@ -42,10 +45,5 @@ public class Silver extends Card implements Treasure {
 	@Override
 	public void onTrash() {
 
-	}
-
-	@Override
-	public int getValue() {
-		return 2;
 	}
 }

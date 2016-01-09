@@ -1,4 +1,8 @@
-package mountaincat.dominion.card;
+package mountaincat.dominion.card.base;
+
+import mountaincat.dominion.card.Card;
+import mountaincat.dominion.card.Type;
+import mountaincat.dominion.card.Victory;
 
 /**
  * Created by samslee on 2/20/15.

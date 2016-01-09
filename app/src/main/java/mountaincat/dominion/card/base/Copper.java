@@ -1,4 +1,8 @@
-package mountaincat.dominion.card;
+package mountaincat.dominion.card.base;
+
+import mountaincat.dominion.card.Card;
+import mountaincat.dominion.card.Treasure;
+import mountaincat.dominion.card.Type;
 
 /**
  * Created by samslee on 2/14/15.
