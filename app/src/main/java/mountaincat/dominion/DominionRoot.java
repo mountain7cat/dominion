@@ -74,13 +74,7 @@ public class DominionRoot extends FragmentActivity {
 		} );
 
 		// TODO: 1/4/16 add a start game dialog box
-		List<Player> players = new ArrayList<>();
-		players.add( new Player() );
-		players.add( new BigMoneyPlayer() );
-		players.add( new BigMoneyPlayer() );
-		players.add( new BigMoneyPlayer() );
-		mGame = new Game( players );
-		mGame.start();
+		mGame = Game.startGame();
 	}
 
 	@Override

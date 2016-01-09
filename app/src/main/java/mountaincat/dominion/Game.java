@@ -10,6 +10,7 @@ import java.util.Random;
 import mountaincat.dominion.Exception.KingdomPileEmptyException;
 import mountaincat.dominion.card.Card;
 import mountaincat.dominion.card.Type;
+import mountaincat.dominion.players.BigMoneyPlayer;
 import mountaincat.dominion.players.Player;
 
 /**
@@ -19,13 +20,18 @@ public class Game {
 	private final List<Player> players = new ArrayList<>();
 	private Map<Type, Integer> kingdom = new HashMap<>();
 
-	public Game( List<Player> players ) {
+	private Game( List<Player> players ) {
 		players.addAll( players );
 	}
 
 
-	public void start() {
-
+	public static Game startGame() {
+		List<Player> players = new ArrayList<>();
+		players.add( new Player() );
+		players.add( new BigMoneyPlayer() );
+		players.add( new BigMoneyPlayer() );
+		players.add( new BigMoneyPlayer() );
+		return new Game( players );
 	}
 
 	public void setup() {
