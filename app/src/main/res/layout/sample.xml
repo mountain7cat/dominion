@@ -5,9 +5,9 @@
 
     <include
         layout="@layout/card_view"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_gravity="center"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_margin="20dp"
         android:background="@drawable/black_border" />
 
     <LinearLayout
@@ -15,16 +15,22 @@
         android:layout_height="wrap_content">
 
         <Button
-            android:id="@+id/revealButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="reveal"
             android:text="reveal" />
 
         <Button
-            android:id="@+id/hideButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="hide"
             android:text="hide" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="animate"
+            android:text="animate" />
     </LinearLayout>
 
     <LinearLayout
