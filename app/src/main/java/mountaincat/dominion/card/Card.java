@@ -6,6 +6,9 @@ package mountaincat.dominion.card;
 
 public class Card {
 
+	protected Card() {
+	}
+
 	public Type getType() {
 		return null;
 	}

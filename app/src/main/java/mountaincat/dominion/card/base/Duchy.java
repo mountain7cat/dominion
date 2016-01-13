@@ -9,7 +9,7 @@ import mountaincat.dominion.card.Victory;
  */
 public class Duchy extends Card implements Victory {
 
-	private static Duchy mInstance = new Duchy();
+	private static final Duchy mInstance = new Duchy();
 
 	private Duchy() {
 	}

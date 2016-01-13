@@ -9,7 +9,7 @@ import mountaincat.dominion.card.Type;
  */
 public class Copper extends Card implements Treasure {
 
-	private static Copper mInstance = new Copper();
+	private static final Copper mInstance = new Copper();
 
 	private Copper() {
 	}

@@ -9,7 +9,7 @@ import mountaincat.dominion.card.Type;
  */
 public class Gold extends Card implements Treasure {
 
-	private static Gold mInstance = new Gold();
+	private static final Gold mInstance = new Gold();
 
 	private Gold() {
 	}

@@ -8,7 +8,7 @@ import mountaincat.dominion.card.Type;
  */
 public class Curse extends Card {
 
-	private static Curse mInstance = new Curse();
+	private static final Curse mInstance = new Curse();
 
 	private Curse() {
 	}

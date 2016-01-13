@@ -1,13 +1,13 @@
 package mountaincat.dominion.card.dominion;
 
 import mountaincat.dominion.Game;
-import mountaincat.dominion.Tableau;
 import mountaincat.dominion.card.Action;
 import mountaincat.dominion.card.Card;
+import mountaincat.dominion.players.Player;
 
 public class Bureaucrat extends Card implements Action {
 
-	private static Bureaucrat mInstance = new Bureaucrat();
+	private static final Bureaucrat mInstance = new Bureaucrat();
 
 	private Bureaucrat() {
 	}
@@ -17,7 +17,7 @@ public class Bureaucrat extends Card implements Action {
 	}
 
 	@Override
-	public void doAction( Game game, Tableau tableau ) {
+	public void doAction(Game game, Player player) {
 
 	}
 }

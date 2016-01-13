@@ -9,7 +9,7 @@ import mountaincat.dominion.card.Victory;
  */
 public class Estate extends Card implements Victory {
 
-	private static Estate mInstance = new Estate();
+	private static final Estate mInstance = new Estate();
 
 	private Estate() {
 	}

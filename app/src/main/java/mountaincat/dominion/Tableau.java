@@ -10,9 +10,14 @@ public class Tableau {
 	private final List<Card> mDiscardPile = new ArrayList<>();
 	private final List<Card> mDeck = new ArrayList<>();
 	private final List<Card> mPlayed = new ArrayList<>();
+	private final List<Card> mHand = new ArrayList<>();
 
 	public List<Card> getDiscardPile() {
 		return mDiscardPile;
+	}
+
+	public List<Card> getHand() {
+		return mHand;
 	}
 
 	public List<Card> getDeck() {
@@ -43,9 +48,9 @@ public class Tableau {
 		return newHand;
 	}
 
-    public void cleanUp() {
-        mDiscardPile.addAll(mPlayed);
-        mPlayed.clear();
-        drawNewHand();
-    }
+	public void cleanUp() {
+		mDiscardPile.addAll( mPlayed );
+		mPlayed.clear();
+		drawNewHand();
+	}
 }

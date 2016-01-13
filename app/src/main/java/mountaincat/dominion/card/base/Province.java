@@ -9,7 +9,7 @@ import mountaincat.dominion.card.Victory;
  */
 public class Province extends Card implements Victory {
 
-	private static Province mInstance = new Province();
+	private static final Province mInstance = new Province();
 
 	private Province() {
 	}

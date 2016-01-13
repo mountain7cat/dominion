@@ -1,35 +1,29 @@
 package mountaincat.dominion.players;
 
-import java.util.ArrayList;
 import java.util.List;
 
+import mountaincat.dominion.Tableau;
 import mountaincat.dominion.card.Card;
+
 /**
  * Created by samslee on 2/14/15.
  */
 public class Player {
-    private final List<Card> deck = new ArrayList<Card>();
-    private final List<Card> hand = new ArrayList<Card>();
 
-    public final static Player NOBODY = new Player();
+	private final Tableau mTableau = new Tableau();
 
-    public List<Card> getDeck() {
-        return deck;
-    }
+	public final static Player NOBODY = new Player();
 
-    public List<Card> getHand() {
-        return hand;
-    }
+	public Tableau getTableau() {
+		return mTableau;
+	}
 
-    public void addDiscardPileToDeck(List<Card> discardPile) {
-        deck.addAll(discardPile);
-    }
+	public List<Card> getDeck() {
+		return mTableau.getDeck();
+	}
 
-    public void drawNewHand() {
-        int handSize = 5;
-        while (handSize > 0) {
-            hand.add(deck.remove(0));
-            handSize--;
-        }
-    }
+	public List<Card> getHand() {
+		return mTableau.getHand();
+	}
+
 }
