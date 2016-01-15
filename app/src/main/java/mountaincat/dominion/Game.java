@@ -24,7 +24,6 @@ public class Game {
 		players.addAll( players );
 	}
 
-
 	public static Game newGame() {
 		List<Player> players = new ArrayList<>();
 		players.add( new Player() );
@@ -32,6 +31,10 @@ public class Game {
 		players.add( new BigMoneyPlayer() );
 		players.add( new BigMoneyPlayer() );
 		return new Game( players );
+	}
+
+	public void start() {
+		
 	}
 
 	public void setup() {

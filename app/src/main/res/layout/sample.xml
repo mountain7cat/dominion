@@ -10,6 +10,14 @@
         android:layout_margin="20dp"
         android:background="@drawable/black_border" />
 
+    <include
+        android:id="@+id/card2"
+        layout="@layout/card_view"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_gravity="bottom"
+        android:layout_margin="20dp" />
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
@@ -31,6 +39,12 @@
             android:layout_height="wrap_content"
             android:onClick="animate"
             android:text="animate" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="moveArc"
+            android:text="animateArc" />
     </LinearLayout>
 
     <LinearLayout
