@@ -17,8 +17,8 @@ import mountaincat.dominion.players.Player;
  * Created by samslee on 2/14/15.
  */
 public class Game {
-	private final List<Player> players = new ArrayList<>();
-	private Map<Type, Integer> kingdom = new HashMap<>();
+	private final List<Player> mPlayers = new ArrayList<>();
+	private Map<Type, Integer> mKingdom = new HashMap<>();
 
 	private Game( List<Player> players ) {
 		players.addAll( players );
@@ -34,7 +34,7 @@ public class Game {
 	}
 
 	public void start() {
-		
+		selectCards();
 	}
 
 	public void setup() {
@@ -42,7 +42,7 @@ public class Game {
 	}
 
 	private List<Type> getAvailableTypes() {
-		// TODO: 1/4/16 choose only kingdom cards
+		// TODO: 1/4/16 choose only mKingdom cards
 		return Arrays.asList( Type.values() );
 	}
 
@@ -54,16 +54,16 @@ public class Game {
 		List<Type> types = shuffle( getAvailableTypes() );
 		int c = 0;
 		while ( c++ < getKingdomSize() ) {
-			kingdom.put( types.get( c ), 10 );
+			mKingdom.put(types.get(c), 10);
 		}
 	}
 
 	public Card getFromKingdom( Type type ) throws KingdomPileEmptyException {
-		int amount = kingdom.get( type );
+		int amount = mKingdom.get( type );
 		if ( amount == 0 ) {
 			throw new KingdomPileEmptyException( type );
 		}
-		kingdom.put( type, amount - 1 );
+		mKingdom.put(type, amount - 1);
 		return type.getCard();
 	}
 

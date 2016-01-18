@@ -13,6 +13,10 @@ public class Card {
 		return null;
 	}
 
+    public Box getBox() {
+        return null;
+    }
+
 	public void onGain() {
 		// no op
 	}

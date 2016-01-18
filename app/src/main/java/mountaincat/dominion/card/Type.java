@@ -73,8 +73,6 @@ public enum Type {
 	WOODCUTTER( Woodcutter.getInstance() ),
 	WORKSHOP( Workshop.getInstance() );
 
-
-
 	private Card mInstance;
 
 	Type( Card card ) {

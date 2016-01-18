@@ -55,6 +55,7 @@ public class DominionRoot extends FragmentActivity {
 
 		// TODO: 1/4/16 add a start game dialog box
 		mGame = Game.newGame();
+        mGame.start();
 	}
 
 	@Override
