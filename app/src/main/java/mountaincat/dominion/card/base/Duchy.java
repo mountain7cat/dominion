@@ -1,5 +1,6 @@
 package mountaincat.dominion.card.base;
 
+import mountaincat.dominion.card.Box;
 import mountaincat.dominion.card.Card;
 import mountaincat.dominion.card.Type;
 import mountaincat.dominion.card.Victory;
@@ -23,7 +24,12 @@ public class Duchy extends Card implements Victory {
 		return Type.DUCHY;
 	}
 
-	@Override
+    @Override
+    public Box getBox() {
+        return Box.BASE;
+    }
+
+    @Override
 	public void onGain() {
 
 	}
