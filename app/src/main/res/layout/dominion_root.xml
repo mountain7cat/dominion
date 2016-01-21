@@ -11,8 +11,9 @@
     tools:context=".DominionRoot"
     tools:ignore="MergeRootFrame">
 
-    <TextView
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/handView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/start" />
+        android:orientation="horizontal" />
 </LinearLayout>

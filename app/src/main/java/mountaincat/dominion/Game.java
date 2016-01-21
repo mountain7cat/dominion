@@ -5,6 +5,8 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.PriorityQueue;
+import java.util.Queue;
 import java.util.Random;
 
 import mountaincat.dominion.Exception.KingdomPileEmptyException;
@@ -20,8 +22,13 @@ import mountaincat.dominion.players.Player;
  * Created by samslee on 2/14/15.
  */
 public class Game {
-    private final List<Player> mPlayers = new ArrayList<>();
-    private Map<Type, Integer> mKingdom = new HashMap<>();
+
+    private static final int NORMAL_KINGDOM_SIZE = 10;
+
+    private final Queue<Player> mPlayers = new PriorityQueue<>();
+    private final Map<Type, Integer> mKingdom = new HashMap<>();
+    private final Map<Type, Integer> mBasePiles = new HashMap<>();
+    private int mEmptyPiles = 0;
 
     private Game(List<Player> players) {
         players.addAll(players);
@@ -37,7 +44,47 @@ public class Game {
     }
 
     public void start() {
-        selectCards();
+        initalizeBaseCards();
+        selectKingdom();
+        initializePlayersDeck();
+
+        while (!gameOver()) {
+            startTurn(mPlayers.poll());
+            // TODO: 1/21/16 figure out how to loop... 
+        }
+
+        cleanupGame();
+    }
+
+    private void cleanupGame() {
+        // TODO: 1/21/16 game ended need to show that on the UI
+    }
+
+    private boolean gameOver() {
+        // TODO: 1/21/16 figure out colony winning condition
+        return mEmptyPiles == 3 || mBasePiles.get(Type.PROVINCE) == 0;
+    }
+
+    public void startTurn(Player player) {
+
+    }
+
+    public void endTurn() {
+
+    }
+
+    private void initalizeBaseCards() {
+        mBasePiles.put(Type.COPPER, 60 - 7 * mPlayers.size());
+        mBasePiles.put(Type.SILVER, 40);
+        mBasePiles.put(Type.GOLD, 30);
+        mBasePiles.put(Type.ESTATE, mPlayers.size() > 2 ? 12 : 8);
+        mBasePiles.put(Type.DUCHY, mPlayers.size() > 2 ? 12 : 8);
+        mBasePiles.put(Type.PROVINCE, mPlayers.size() > 2 ? 12 : 8);
+        mBasePiles.put(Type.CURSE, 10 * (mPlayers.size() - 1));
+        // TODO: 1/21/16 figure out prosperity platinum and colony
+    }
+
+    private void initializePlayersDeck() {
         for (Player player : mPlayers) {
             Tableau tableau = player.getTableau();
             for (int i = 0; i < 7; i++) {
@@ -50,22 +97,22 @@ public class Game {
         }
     }
 
-    public void setup() {
-        selectCards();
-    }
-
     private int getKingdomSize() {
-        return 10;
+        return mKingdom.keySet().size();
     }
 
-    private void selectCards() {
+    private void selectKingdom() {
         List<Type> types = shuffle(Arrays.asList(Type.values()));
         int i = 0;
-        while (mKingdom.size() < getKingdomSize()) {
+        while (mKingdom.size() < NORMAL_KINGDOM_SIZE) {
             if (types.get(i).getCard().getBox() != Box.BASE) {
                 mKingdom.put(types.get(i), 10);
             }
             i++;
+        }
+
+        for (Type type : mKingdom.keySet()) {
+            type.getCard().onStart();
         }
     }
 
@@ -74,7 +121,12 @@ public class Game {
         if (amount == 0) {
             throw new KingdomPileEmptyException(type);
         }
-        mKingdom.put(type, amount - 1);
+
+        if (--amount == 0) {
+            mEmptyPiles++;
+        }
+
+        mKingdom.put(type, amount);
         return type.getCard();
     }
 
