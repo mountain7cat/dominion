@@ -26,7 +26,6 @@ public class DominionRoot extends FragmentActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        // TODO: 1/14/16 clean up all the animation stuff
         super.onCreate(savedInstanceState);
         setContentView(R.layout.dominion_root);
         mHandView = (RecyclerView) findViewById(R.id.handView);

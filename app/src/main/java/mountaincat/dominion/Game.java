@@ -47,12 +47,7 @@ public class Game {
         initalizeBaseCards();
         selectKingdom();
         initializePlayersDeck();
-
-        while (!gameOver()) {
-            startTurn(mPlayers.poll());
-            // TODO: 1/21/16 figure out how to loop... 
-        }
-
+        startTurn(mPlayers.poll());
         cleanupGame();
     }
 
