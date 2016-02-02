@@ -6,8 +6,10 @@ import mountaincat.dominion.card.Victory;
 
 public class Colony extends Card implements Victory {
 
-	public static Card getInstance() {
-		return null;
+    private static final Colony mInstance = new Colony();
+
+    public static Card getInstance() {
+		return mInstance;
 	}
 
     @Override

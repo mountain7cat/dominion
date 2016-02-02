@@ -5,8 +5,10 @@ import mountaincat.dominion.card.Card;
 
 public class Adventurer extends Card {
 
-    public static Card getInstance(){
-        return null;
+    private static final Adventurer mInstance = new Adventurer();
+
+    public static Card getInstance() {
+        return mInstance;
     }
 
     @Override

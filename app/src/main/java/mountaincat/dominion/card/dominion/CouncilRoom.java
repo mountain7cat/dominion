@@ -6,8 +6,11 @@ import mountaincat.dominion.card.Card;
 import mountaincat.dominion.players.Player;
 
 public class CouncilRoom extends Card implements Action {
+
+    private static final CouncilRoom mInstance = new CouncilRoom();
+
     public static Card getInstance() {
-        return null;
+        return mInstance;
     }
 
     @Override

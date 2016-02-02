@@ -6,8 +6,11 @@ import mountaincat.dominion.card.Card;
 import mountaincat.dominion.players.Player;
 
 public class Laboratory extends Card implements Action {
+
+    private static final Laboratory mInstance = new Laboratory();
+
     public static Card getInstance() {
-        return null;
+        return mInstance;
     }
 
     @Override

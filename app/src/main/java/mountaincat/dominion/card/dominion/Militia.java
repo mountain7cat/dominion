@@ -6,8 +6,11 @@ import mountaincat.dominion.card.Card;
 import mountaincat.dominion.players.Player;
 
 public class Militia extends Card implements Action {
+
+    private static final Militia mInstance = new Militia();
+
     public static Card getInstance() {
-        return null;
+        return mInstance;
     }
 
     @Override

@@ -6,8 +6,11 @@ import mountaincat.dominion.card.Card;
 import mountaincat.dominion.players.Player;
 
 public class Moneylender extends Card implements Action {
+
+    private static final Moneylender mInstance = new Moneylender();
+
     public static Card getInstance() {
-        return null;
+        return mInstance;
     }
 
     @Override

@@ -8,6 +8,7 @@ import java.util.Map;
 import java.util.PriorityQueue;
 import java.util.Queue;
 import java.util.Random;
+import java.util.concurrent.LinkedBlockingQueue;
 
 import mountaincat.dominion.Exception.KingdomPileEmptyException;
 import mountaincat.dominion.card.Box;
@@ -25,13 +26,15 @@ public class Game {
 
     private static final int NORMAL_KINGDOM_SIZE = 10;
 
-    private final Queue<Player> mPlayers = new PriorityQueue<>();
+    private final Queue<Player> mPlayers = new LinkedBlockingQueue<>();
     private final Map<Type, Integer> mKingdom = new HashMap<>();
     private final Map<Type, Integer> mBasePiles = new HashMap<>();
     private int mEmptyPiles = 0;
 
+    private Player mCurrentPlayer;
+
     private Game(List<Player> players) {
-        players.addAll(players);
+        mPlayers.addAll(players);
     }
 
     public static Game newGame() {
@@ -61,11 +64,15 @@ public class Game {
     }
 
     public void startTurn(Player player) {
-
+        mCurrentPlayer = player;
     }
 
     public void endTurn() {
 
+    }
+
+    public Player getCurrentPlayer() {
+        return mCurrentPlayer;
     }
 
     private void initalizeBaseCards() {
@@ -97,7 +104,7 @@ public class Game {
     }
 
     private void selectKingdom() {
-        List<Type> types = shuffle(Arrays.asList(Type.values()));
+        List<Type> types = shuffle(new ArrayList<>(Arrays.asList(Type.values())));
         int i = 0;
         while (mKingdom.size() < NORMAL_KINGDOM_SIZE) {
             if (types.get(i).getCard().getBox() != Box.BASE) {

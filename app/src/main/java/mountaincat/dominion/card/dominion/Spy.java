@@ -6,8 +6,11 @@ import mountaincat.dominion.card.Card;
 import mountaincat.dominion.players.Player;
 
 public class Spy extends Card implements Action {
+
+    private static final Spy mInstance = new Spy();
+
     public static Card getInstance() {
-        return null;
+        return mInstance;
     }
 
     @Override

@@ -6,8 +6,11 @@ import mountaincat.dominion.card.Card;
 import mountaincat.dominion.players.Player;
 
 public class Mine extends Card implements Action {
+
+    private static final Mine mInstance = new Mine();
+
     public static Card getInstance() {
-        return null;
+        return mInstance;
     }
 
     @Override

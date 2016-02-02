@@ -6,8 +6,11 @@ import mountaincat.dominion.card.Card;
 import mountaincat.dominion.players.Player;
 
 public class Village extends Card implements Action {
+
+    private static final Village mInstance = new Village();
+
     public static Card getInstance() {
-        return null;
+        return mInstance;
     }
 
     @Override

@@ -6,8 +6,11 @@ import mountaincat.dominion.card.Card;
 import mountaincat.dominion.players.Player;
 
 public class Moat extends Card implements Action {
+
+    private static final Moat mInstance = new Moat();
+
     public static Card getInstance() {
-        return null;
+        return mInstance;
     }
 
     @Override

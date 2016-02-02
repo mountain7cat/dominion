@@ -17,23 +17,23 @@ import android.view.animation.AccelerateInterpolator;
 
 import mountaincat.dominion.ui.AnimationUtil;
 import mountaincat.dominion.ui.CardListAdapter;
+import mountaincat.dominion.ui.TableauView;
 
 
 public class DominionRoot extends FragmentActivity {
 
     private Game mGame;
-    private RecyclerView mHandView;
+    private TableauView mTableauView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.dominion_root);
-        mHandView = (RecyclerView) findViewById(R.id.handView);
-        mHandView.setLayoutManager(new LinearLayoutManager(this));
-        mHandView.setAdapter(new CardListAdapter());
         // TODO: 1/4/16 add a start game dialog box
+        mTableauView = (TableauView) findViewById(R.id.tableauView);
         mGame = Game.newGame();
         mGame.start();
+        mTableauView.setTableau(mGame.getCurrentPlayer().getTableau());
     }
 
     @Override

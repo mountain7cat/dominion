@@ -6,8 +6,11 @@ import mountaincat.dominion.card.Card;
 import mountaincat.dominion.players.Player;
 
 public class Market extends Card implements Action {
+
+    private static final Market mInstance = new Market();
+
     public static Card getInstance() {
-        return null;
+        return mInstance;
     }
 
     @Override

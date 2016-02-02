@@ -6,8 +6,10 @@ import mountaincat.dominion.card.Treasure;
 
 public class Platinum extends Card implements Treasure {
 
+    private static final Platinum mInstance = new Platinum();
+
     public static Card getInstance() {
-        return null;
+        return mInstance;
     }
 
     @Override

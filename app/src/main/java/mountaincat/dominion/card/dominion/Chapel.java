@@ -6,8 +6,11 @@ import mountaincat.dominion.card.Card;
 import mountaincat.dominion.players.Player;
 
 public class Chapel extends Card implements Action {
+
+    private static final Chapel mInstance = new Chapel();
+
     public static Card getInstance() {
-        return null;
+        return mInstance;
     }
 
     @Override

@@ -6,8 +6,11 @@ import mountaincat.dominion.card.Card;
 import mountaincat.dominion.players.Player;
 
 public class Feast extends Card implements Action {
+
+    private static final Feast mInstance = new Feast();
+
     public static Card getInstance() {
-        return null;
+        return mInstance;
     }
 
     @Override

@@ -6,8 +6,11 @@ import mountaincat.dominion.card.Card;
 import mountaincat.dominion.players.Player;
 
 public class Smithy extends Card implements Action {
+
+    private static final Smithy mInstance = new Smithy();
+
     public static Card getInstance() {
-        return null;
+        return mInstance;
     }
 
     @Override

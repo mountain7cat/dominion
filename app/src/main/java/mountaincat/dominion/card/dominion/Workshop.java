@@ -6,8 +6,11 @@ import mountaincat.dominion.card.Card;
 import mountaincat.dominion.players.Player;
 
 public class Workshop extends Card implements Action {
+
+    private static final Workshop mInstance = new Workshop();
+
     public static Card getInstance() {
-        return null;
+        return mInstance;
     }
 
     @Override

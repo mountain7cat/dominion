@@ -4,6 +4,7 @@ import android.content.Context;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
+import android.view.LayoutInflater;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -32,15 +33,19 @@ public class TableauView extends LinearLayout {
 
     public TableauView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+    }
 
+    @Override
+    protected void onFinishInflate() {
+        super.onFinishInflate();
         mPlayedCards = (RecyclerView) findViewById(R.id.playedCards);
         mHand = (RecyclerView) findViewById(R.id.hand);
         mDeck = (TextView) findViewById(R.id.deck);
         mTrash = (TextView) findViewById(R.id.trash);
 
-        mPlayedCards.setLayoutManager(new LinearLayoutManager(context));
+        mPlayedCards.setLayoutManager(new LinearLayoutManager(getContext()));
         mPlayedCards.setAdapter(new CardListAdapter());
-        mHand.setLayoutManager(new LinearLayoutManager(context));
+        mHand.setLayoutManager(new LinearLayoutManager(getContext()));
         mHand.setAdapter(new CardListAdapter());
     }
 

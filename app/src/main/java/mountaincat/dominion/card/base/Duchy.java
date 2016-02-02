@@ -16,7 +16,7 @@ public class Duchy extends Card implements Victory {
 	}
 
 	public static Duchy getInstance() {
-		return new Duchy();
+		return mInstance;
 	}
 
 	@Override
