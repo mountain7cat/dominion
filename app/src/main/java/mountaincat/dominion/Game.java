@@ -106,6 +106,7 @@ public class Game {
     private void selectKingdom() {
         List<Type> types = shuffle(new ArrayList<>(Arrays.asList(Type.values())));
         int i = 0;
+        // TODO: 2/1/16 there is a npe here that needed to be track down 
         while (mKingdom.size() < NORMAL_KINGDOM_SIZE) {
             if (types.get(i).getCard().getBox() != Box.BASE) {
                 mKingdom.put(types.get(i), 10);
