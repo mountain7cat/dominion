@@ -9,12 +9,15 @@ public class Moneylender extends Card implements Action {
 
     private static final Moneylender mInstance = new Moneylender();
 
+    private Moneylender() {
+    }
+
     public static Card getInstance() {
         return mInstance;
     }
 
     @Override
     public void doAction(Game game, Player player) {
-        
+
     }
 }

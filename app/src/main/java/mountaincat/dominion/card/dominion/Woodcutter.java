@@ -9,12 +9,15 @@ public class Woodcutter extends Card implements Action {
 
     private static final Woodcutter mInstance = new Woodcutter();
 
+    private Woodcutter() {
+    }
+
     public static Card getInstance() {
-        return null;
+        return mInstance;
     }
 
     @Override
     public void doAction(Game game, Player player) {
-        
+
     }
 }

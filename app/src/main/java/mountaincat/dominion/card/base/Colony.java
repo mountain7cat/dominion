@@ -9,8 +9,11 @@ public class Colony extends Card implements Victory {
     private static final Colony mInstance = new Colony();
 
     public static Card getInstance() {
-		return mInstance;
-	}
+        return mInstance;
+    }
+
+    private Colony() {
+    }
 
     @Override
     public Box getBox() {

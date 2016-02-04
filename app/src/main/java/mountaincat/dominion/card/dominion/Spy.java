@@ -9,6 +9,9 @@ public class Spy extends Card implements Action {
 
     private static final Spy mInstance = new Spy();
 
+    private Spy() {
+    }
+
     public static Card getInstance() {
         return mInstance;
     }

@@ -9,6 +9,9 @@ public class Witch extends Card implements Action {
 
     private static final Witch mInstance = new Witch();
 
+    private Witch() {
+    }
+
     public static Card getInstance() {
         return mInstance;
     }

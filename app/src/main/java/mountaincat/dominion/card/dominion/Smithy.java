@@ -9,6 +9,9 @@ public class Smithy extends Card implements Action {
 
     private static final Smithy mInstance = new Smithy();
 
+    private Smithy() {
+    }
+
     public static Card getInstance() {
         return mInstance;
     }

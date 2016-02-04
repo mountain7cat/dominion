@@ -9,12 +9,15 @@ public class ThroneRoom extends Card implements Action {
 
     private static final ThroneRoom mInstance = new ThroneRoom();
 
+    private ThroneRoom() {
+    }
+
     public static Card getInstance() {
         return mInstance;
     }
 
     @Override
     public void doAction(Game game, Player player) {
-        
+
     }
 }

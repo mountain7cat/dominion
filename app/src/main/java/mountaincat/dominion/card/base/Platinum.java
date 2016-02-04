@@ -12,6 +12,10 @@ public class Platinum extends Card implements Treasure {
         return mInstance;
     }
 
+    private Platinum() {
+
+    }
+
     @Override
     public Box getBox() {
         return Box.BASE;

@@ -9,12 +9,15 @@ public class Workshop extends Card implements Action {
 
     private static final Workshop mInstance = new Workshop();
 
+    private Workshop() {
+    }
+
     public static Card getInstance() {
         return mInstance;
     }
 
     @Override
     public void doAction(Game game, Player player) {
-        
+
     }
 }

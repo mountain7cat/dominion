@@ -9,6 +9,9 @@ public class Remodel extends Card implements Action {
 
     private static final Remodel mInstance = new Remodel();
 
+    private Remodel() {
+    }
+
     public static Card getInstance() {
         return mInstance;
     }

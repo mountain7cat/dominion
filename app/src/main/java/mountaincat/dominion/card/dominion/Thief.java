@@ -9,6 +9,9 @@ public class Thief extends Card implements Action {
 
     private static final Thief mInstance = new Thief();
 
+    private Thief() {
+    }
+
     public static Card getInstance() {
         return mInstance;
     }

@@ -9,6 +9,9 @@ public class Village extends Card implements Action {
 
     private static final Village mInstance = new Village();
 
+    private Village() {
+    }
+
     public static Card getInstance() {
         return mInstance;
     }
