@@ -1,22 +1,10 @@
 package mountaincat.dominion;
 
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
-import android.content.Intent;
-import android.graphics.Path;
 import android.os.Bundle;
-import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.app.FragmentActivity;
-import android.support.v4.util.Pair;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.animation.AccelerateInterpolator;
 
-import mountaincat.dominion.ui.AnimationUtil;
-import mountaincat.dominion.ui.CardListAdapter;
 import mountaincat.dominion.ui.TableauView;
 
 
